@@ -4,21 +4,19 @@
 import requests
 import os
 from pathlib import Path
-import ast
-import json
+# import ast
+# import json
 # from bs4 import BeautifulSoup
-import re
-from config import Config
+# import re
 
 
 download_dir = os.path.join(Path.home(), 'Downloads')
 
 
 class Sub:
-    def __init__(self, configuration='default'):
-        config = Config[configuration]
-        base_url = config[0]
-        search_path = config[1]
+    def __init__(self):
+        base_url = "https://subtitleshub.net"
+        search_path = "/subtitles/search/"
         self.search_path = "".join([base_url, search_path])
 
     def search(self, string):
