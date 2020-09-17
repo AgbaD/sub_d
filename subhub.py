@@ -128,7 +128,6 @@ class Sub:
 
 
 if __name__ == "__main__":
-    # init class
     current_search = Sub()
     s = "Friends"
     movies = current_search.search(s)
