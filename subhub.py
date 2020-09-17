@@ -114,9 +114,12 @@ class Sub:
             pprint(html2)
 
             try:
-                link = html2.find_all('span', attrs={'class': 'item'}).find('a', attrs={'title': re.compile('English')})
+                span = html2.find_all('span', attrs={'class': 'item'})
+                link = None
+                for i in span:
+                    link = i.find('a', string=re.compile('English'))
                 link = link['href']
-
+                print(link)
                 real_link = ''.join([self.base_url, link])
                 response3 = requests.get(real_link, headers=headers)
                 print('ok')
@@ -127,6 +130,6 @@ class Sub:
 if __name__ == "__main__":
     # init class
     current_search = Sub()
-    s = "friends"
+    s = "Friends"
     movies = current_search.search(s)
     current_search.get_sub(movies['Friends (1994)'])
