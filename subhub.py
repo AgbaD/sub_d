@@ -25,7 +25,7 @@ class Sub:
         search_path = "".join([self.base_url, path])
 
         headers = {'application': 'sub_d',
-                   'User-Agent': 'https://github.com/BlankGodd/sub_d'}
+                   'User-Agent': 'https://github.com/AgbaD/sub_d'}
         print(f"Title: {string}")
         print()
         if string.split(' '):
@@ -51,7 +51,7 @@ class Sub:
         sub_path = "".join([self.base_url, link])
 
         headers = {'application': 'sub_d',
-                   'User-Agent': 'https://github.com/BlankGodd/sub_d'}
+                   'User-Agent': 'https://github.com/AgbaD/sub_d'}
         response = requests.get(sub_path, headers=headers)
         if response.status_code != 200:
             return None
